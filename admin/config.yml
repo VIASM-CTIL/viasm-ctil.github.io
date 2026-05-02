@@ -5,14 +5,14 @@ backend:
   base_url: "https://auth.0x1115.com"
   auth_endpoint: auth
 
-publich_mode: editorial_workflow
+publish_mode: editorial_workflow
 
 media_folder: "assets/images/uploads"
 public_folder: "/assets/images/uploads"
 
 collections:  
-  - name: "homepage"
-    label: "Homepage"
+  - name: "layout"
+    label: "Layout"
     files:
       - label: "Homepage"
         name: "homepage"
@@ -20,6 +20,11 @@ collections:
         fields:
           - { label: "Layout", name: "layout", widget: "hidden", default: "page" }
           - { label: "Title", name: "title", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown" }
+      - label: "Footer"
+        name: "footer"
+        file: "/_includes/footer-content.md"
+        fields:          
           - { label: "Body", name: "body", widget: "markdown" }
   - name: "pages"
     label: "Pages"
