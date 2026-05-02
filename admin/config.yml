@@ -35,6 +35,7 @@ collections:
       - { label: "Layout", name: "layout", widget: "hidden", default: "page" }
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Menu Order", name: "menu_order", widget: "number", required: false, default: 10, value_type: "int" }
   - name: "posts"
     label: "Posts"
     folder: "_posts"
