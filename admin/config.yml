@@ -10,7 +10,26 @@ publich_mode: editorial_workflow
 media_folder: "assets/images/uploads"
 public_folder: "/assets/images/uploads"
 
-collections:
+collections:  
+  - name: "homepage"
+    label: "Homepage"
+    files:
+      - label: "Homepage"
+        name: "homepage"
+        file: "/index.markdown"
+        fields:
+          - { label: "Layout", name: "layout", widget: "hidden", default: "page" }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown" }
+  - name: "pages"
+    label: "Pages"
+    folder: "_pages"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Layout", name: "layout", widget: "hidden", default: "page" }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown" }
   - name: "posts"
     label: "Posts"
     folder: "_posts"
@@ -23,12 +42,3 @@ collections:
       - { label: "Body", name: "body", widget: "markdown" }
       - { label: "Categories", name: "categories", widget: "list", required: false }
       - { label: "Tags", name: "tags", widget: "list", required: false }
-  - name: "pages"
-    label: "Pages"
-    folder: "_pages"
-    create: true
-    slug: "{{slug}}"
-    fields:
-      - { label: "Layout", name: "layout", widget: "hidden", default: "page" }
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Body", name: "body", widget: "markdown" }
